@@ -1,4 +1,4 @@
-<?php require 'application/controllers/signin.php'; ?>
+<?php require 'includes/signin.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -11,8 +11,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- icheck bootstrap -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
@@ -24,8 +22,7 @@
     <div class="login-logo">
       <a href="index.php"><b>XYT</b>Company</a>
     </div>
-    <?php echo $message; ?>
-
+    <?php echo $alert; ?>
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
@@ -49,12 +46,8 @@
           </div>
           <div class="row">
             <div class="col-8">
-              <div class="icheck-primary">
-                <input type="checkbox" id="remember">
-                <label for="remember">
-                  Remember Me
-                </label>
-              </div>
+              <a href="register.html" class="">Register a new membership</a>
+
             </div>
             <!-- /.col -->
             <div class="col-4">
@@ -63,13 +56,6 @@
             <!-- /.col -->
           </div>
         </form>
-
-        <p class="mb-1">
-          <a href="forgot-password.html">I forgot my password</a>
-        </p>
-        <p class="mb-0">
-          <a href="register.html" class="text-center">Register a new membership</a>
-        </p>
       </div>
       <!-- /.login-card-body -->
     </div>

@@ -1,6 +1,6 @@
 <?php
-require 'application/config/connection.php';
-require_once 'application/config/functions.php';
+require 'connection.php';
+require_once 'functions.php';
 
 session_start();
 
@@ -8,7 +8,7 @@ if (isset($_SESSION['is_logged_in'])) {
 	header('Location:dashboard.php');
 }
 
-$message = "";
+$alert = "";
 
 if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
@@ -24,11 +24,11 @@ if (isset($_POST['submit'])) {
     header('Location:dashboard.php');
 
 	} else {
-		$message = '
+		$alert = '
 			<div class="alert alert-danger alert-dismissible">
 				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-				<h5><i class="icon fas fa-user"></i> Login Failed!</h5>
-				The email or password you’ve entered is incorrect.
+				<h5><i class="icon fas fa-exclamation-triangle"></i> Login Failed!</h5>
+				Incorrect email or password.
 			</div>	';
 	}
 }
