@@ -1,14 +1,12 @@
 <?php
 
-session_start();
-
 if (!isset($_SESSION['is_logged_in'])) {
-	header("Location:../index.php");
+	header("Location:index.php");
 }
 
-$alert = '';
+$alert_add = '';
 
-if(isset($_POST['submit'])) {
+if(isset($_POST['add_supplier'])) {
 
   $id = $function->setID('id', 'supplier');
   $name = $_POST['name'];
@@ -26,17 +24,17 @@ if(isset($_POST['submit'])) {
     $query = "INSERT INTO supplier (id, name, address, phone_number) VALUES (:id, :name, :address, :phone_number)";
     $function->insert($query, $data);
 
-    $alert = '
+    $alert_add = '
     <div class="col-12">
       <div class="alert alert-success alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
         <i class="icon fas fa-check"></i>
-        Supplier Added Successfully.
+        Supplier added successfully.
       </div>
     </div>
     ';
   } catch (Exception $e) {
-    $alert = '
+    $alert_add = '
     <div class="col-12">
       <div class="alert alert-danger alert-dismissible">
         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>

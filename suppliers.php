@@ -1,7 +1,10 @@
 <?php
+  session_start();
+
   include 'includes/connection.php';
   include 'includes/functions.php';
-  include 'includes/add-supplier.php';
+  include 'includes/supplier/add-supplier.php';
+  include 'includes/supplier/delete-supplier.php';
 
 ?>
 
@@ -47,7 +50,9 @@
       <section class="content">
         <div class="row">
           <!-- alert message -->
-          <?php echo $alert; ?>
+          <?php echo $alert_add; ?>
+          <?php echo $alert_delete; ?>
+
           <div class="col-12">
             <div class="card">
               <div class="card-header">
@@ -87,9 +92,11 @@
                           <button class="btn btn-success btn-xs">
                             <i class="fa fa-pencil-alt fa-fw"></i>
                           </button>
-                          <button class="btn btn-danger btn-xs">
+                          <button data-toggle="modal" data-target="#delete<?php echo $row['id']; ?>"
+                            class="btn btn-danger btn-xs">
                             <i class="fa fa-trash-alt fa-fw"></i>
                           </button>
+                          <?php include 'includes/supplier/supplier-modals.php'; ?>
                         </td>
                       </tr>
 
@@ -121,7 +128,7 @@
               <div class="form-group row">
                 <label for="inputName" class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
-                  <input type="text" name="name" class="form-control" id="inputName" placeholder="Samya" minlength="25"
+                  <input type="text" name="name" class="form-control" id="inputName" placeholder="Samya" maxlength="25"
                     required>
                 </div>
               </div>
@@ -142,7 +149,7 @@
             </div>
             <div class="card-footer">
               <button type="submit" class="btn btn-default">CANCEL</button>
-              <button type="submit" name="submit" class="btn btn-info float-right">ADD</button>
+              <button type="submit" name="add_supplier" class="btn btn-info float-right">ADD</button>
             </div>
           </form>
         </div>
