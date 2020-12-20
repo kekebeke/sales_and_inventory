@@ -5,6 +5,7 @@
   include 'includes/functions.php';
   include 'includes/supplier/add-supplier.php';
   include 'includes/supplier/delete-supplier.php';
+  include 'includes/supplier/update-supplier.php';
 
 ?>
 
@@ -52,6 +53,7 @@
           <!-- alert message -->
           <?php echo $alert_add; ?>
           <?php echo $alert_delete; ?>
+          <?php echo $alert_update; ?>
 
           <div class="col-12">
             <div class="card">
@@ -89,15 +91,16 @@
                         <td><?php echo $row['address']; ?></td>
                         <td><?php echo $row['phone_number']; ?></td>
                         <td class="text-center">
-                          <button class="btn btn-success btn-xs">
+                          <button data-toggle="modal" data-target="#update<?php echo $row['id']; ?>"
+                            class="btn btn-success btn-xs">
                             <i class="fa fa-pencil-alt fa-fw"></i>
                           </button>
                           <button data-toggle="modal" data-target="#delete<?php echo $row['id']; ?>"
                             class="btn btn-danger btn-xs">
                             <i class="fa fa-trash-alt fa-fw"></i>
                           </button>
-                          <?php include 'includes/supplier/supplier-modals.php'; ?>
                         </td>
+                        <?php include 'includes/supplier/supplier-modals.php'; ?>
                       </tr>
 
                       <?php
@@ -128,7 +131,7 @@
               <div class="form-group row">
                 <label for="inputName" class="col-sm-4 col-form-label">Name</label>
                 <div class="col-sm-8">
-                  <input type="text" name="name" class="form-control" id="inputName" placeholder="Samya" maxlength="25"
+                  <input type="text" name="name" class="form-control" id="inputName" placeholder="Samya" maxlength="35"
                     required>
                 </div>
               </div>
