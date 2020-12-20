@@ -5,4 +5,4 @@ unset($_SESSION['user']);
 unset($_SESSION['is_logged_in']);
 session_destroy();
 
-header('Location:index.php');
+header('Location:../index.php');

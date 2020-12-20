@@ -55,7 +55,7 @@ if (!isset($_SESSION['is_logged_in'])) {
         <a href="#" class="nav-link">Profile</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="application/controllers/signout.php" class="nav-link">Sign Out</a>
+        <a href="includes/signout.php" class="nav-link">Sign Out</a>
       </li>
     </ul>
   </nav>

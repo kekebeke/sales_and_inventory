@@ -1,4 +1,4 @@
-<?php require 'includes/signin.php'; ?>
+<?php require 'includes/signup.php'; ?>
 
 <!DOCTYPE html>
 <html>
@@ -30,9 +30,12 @@
         </h3>
       </div>
       <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign In</p>
+        <p class="login-box-msg">Create Account</p>
         <form method="post" role="form" id="loginForm">
-
+          <div class="form-group">
+            <label for="InputName">Name</label>
+            <input type="text" name="name" class="form-control" id="InputName" placeholder="Name">
+          </div>
           <div class="form-group">
             <label for="InputEmail">Email address</label>
             <input type="email" name="email" class="form-control" id="InputEmail" placeholder="Email">
@@ -43,10 +46,11 @@
           </div>
           <div class="row">
             <div class="col-12">
-              <button type="submit" name="submit" class="btn btn-info btn-block">Sign In</button>
+              <button type="submit" name="submit" class="btn btn-info btn-block">Register</button>
             </div>
-            <div class="col-12 text-center mt-2">
-              <a href="signup.php">Create Account</a>
+            <div class="col-12 text-center mt-3">
+              Already have an account?
+              <a href="index.php"><b>Sign In</b></a>
             </div>
           </div>
         </form>
@@ -68,6 +72,10 @@
     $(document).ready(function () {
       $('#loginForm').validate({
         rules: {
+          name: {
+            required: true,
+            maxlength: 30
+          },
           email: {
             required: true,
             email: true,
@@ -77,7 +85,11 @@
             minlength: 5
           },
         },
+
         messages: {
+          name: {
+            required: "Please enter your name",
+          },
           email: {
             required: "Please enter a email address",
             email: "Please enter a vaild email address"
