@@ -1,7 +1,7 @@
 <?php $supplier = $function->getData('supplier', 'id', $row['id']); ?>
 
 <!-- Delete Supplier Modal -->
-<div class="modal fade" id="delete<?php echo $row['id']; ?>">
+<div class="modal fade text-center" id="delete<?php echo $row['id']; ?>">
   <div class="modal-dialog modal-sm">
     <div class="card card-danger modal-content">
       <div class="card-header">
