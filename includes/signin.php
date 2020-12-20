@@ -5,7 +5,7 @@ require_once 'functions.php';
 session_start();
 
 if (isset($_SESSION['is_logged_in'])) {
-	header('Location:dashboard.php');
+	header('Location:transactions.php');
 }
 
 $alert = "";
@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 	if (!empty($result)) {
 		$_SESSION['user'] = $result;
     $_SESSION['is_logged_in'] = true;
-    header('Location:dashboard.php');
+    header('Location:transactions.php');
 
 	} else {
 		$alert = '

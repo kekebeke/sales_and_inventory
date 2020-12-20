@@ -75,7 +75,7 @@ session_start(); ?>
                     </thead>
                     <tbody>
 
-                  <?php
+                      <?php
 
                   try {
                       $query = "SELECT * FROM supplier WHERE status != 0";
@@ -99,8 +99,8 @@ session_start(); ?>
                           </button>
                         </td>
                       </tr>
-                      
-                  <?php
+
+                      <?php
                       }
                   } catch (PDOException $e) {
                       echo "There is some problem in connection: " . $e->getMessage();

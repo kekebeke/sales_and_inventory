@@ -31,7 +31,7 @@
       </div>
       <div class="card-body login-card-body">
         <p class="login-box-msg">Create Account</p>
-        <form method="post" role="form" id="loginForm">
+        <form method="post" role="form" id="signupForm">
           <div class="form-group">
             <label for="InputName">Name</label>
             <input type="text" name="name" class="form-control" id="InputName" placeholder="Name">
@@ -70,7 +70,7 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-      $('#loginForm').validate({
+      $('#signupForm').validate({
         rules: {
           name: {
             required: true,

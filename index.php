@@ -31,7 +31,7 @@
       </div>
       <div class="card-body login-card-body">
         <p class="login-box-msg">Sign In</p>
-        <form method="post" role="form" id="loginForm">
+        <form method="post" role="form" id="signinForm">
 
           <div class="form-group">
             <label for="InputEmail">Email address</label>
@@ -66,7 +66,7 @@
 
   <script type="text/javascript">
     $(document).ready(function () {
-      $('#loginForm').validate({
+      $('#signinForm').validate({
         rules: {
           email: {
             required: true,
